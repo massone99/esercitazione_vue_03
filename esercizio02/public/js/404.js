@@ -1,1 +1,3 @@
-// component 404 per rispondere agli errori
+const NotFound = {
+    template: `<div> Not Found </div>`
+}

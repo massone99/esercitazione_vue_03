@@ -40,23 +40,12 @@
 <script src="https://unpkg.com/vue@3"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue-router@4"></script>
-<script src="../public/js/home.js"></script>
-<script src="../public/js/movies.js"></script>
-<script src="../public/js/404.js"></script>
-<script src="../public/js/router.js"></script>
-
+<script src="static/js/home.js"></script>
+<script src="static/js/movies.js"></script>
+<script src="static/js/404.js"></script>
+<script src="static/js/router.js"></script>
 <script>
     const app = Vue.createApp({});
-    const router = VueRouter.createRouter({
-        // Permette al router di tenere in memoria lo stato della navigazione
-        // per tornare alla pagina precedente
-        history: VueRouter.createWebHistory(),
-        routes: [
-            {path: '/', component: Home},
-            {path: '/movies', component: Movies},
-        ]
-    });
-
     app.use(router);
     app.mount('#movies-app');
 </script>
