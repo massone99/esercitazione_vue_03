@@ -1,0 +1,1 @@
+// component 404 per rispondere agli errori

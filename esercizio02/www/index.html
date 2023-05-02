@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Hello World in Vue.js</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <style>
+    </style>
+</head>
+
+<body>
+<div class="container-fluid" id="movies-app">
+    <h1>Amazing Movies</h1>
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
+        <div class="container container-fluid">
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/">Home</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/movies">Movies</router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- INSERIRE qui il rendering del router  -->
+    <!--viene rendereizzato il componente attuale-->
+    <router-view></router-view>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue-router@4"></script>
+<script src="../public/js/home.js"></script>
+<script src="../public/js/movies.js"></script>
+<script src="../public/js/404.js"></script>
+<script src="../public/js/router.js"></script>
+
+<script>
+    const app = Vue.createApp({});
+    const router = VueRouter.createRouter({
+        // Permette al router di tenere in memoria lo stato della navigazione
+        // per tornare alla pagina precedente
+        history: VueRouter.createWebHistory(),
+        routes: [
+            {path: '/', component: Home},
+            {path: '/movies', component: Movies},
+        ]
+    });
+
+    app.use(router);
+    app.mount('#movies-app');
+</script>
+
+</body>
+</html>
